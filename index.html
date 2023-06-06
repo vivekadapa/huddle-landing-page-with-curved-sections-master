@@ -13,6 +13,7 @@
   <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
   <script src="https://cdn.tailwindcss.com"></script>
+  <script src="script.js" defer></script>
   <style>
     h1 {
       font-family: 'Poppins', sans-serif;
@@ -34,7 +35,7 @@
       <img src="./images/logo.svg" alt="" class="sm:w-48 w-32">
     </div>
     <div class="sm:text-base text-xs">
-      <button class="border border-pink-500 px-6 py-1 rounded-2xl text-pink-500">Try it Free</button>
+      <button class="border border-pink-500 px-6 py-1 rounded-2xl text-pink-500 hover:text-pink-400 hover:border-pink-400">Try it Free</button>
     </div>
   </nav>
 
@@ -111,7 +112,7 @@
       Started For Free</button>
   </section>
 
-  <footer class="w-screen mt-32">
+  <footer class="w-screen mt-32 relative">
     <picture>
       <source media="(min-width:756px)" srcset="./images/bg-footer-top-desktop.svg">
       <img src="./images/bg-footer-top-mobile.svg" alt="" class="w-full">
@@ -135,7 +136,7 @@
             <img src="./images/icon-email.svg" alt="" class="w-15">
             <p>example@huddle.com</p>
           </div>
-          <div class="flex gap-4 text-2xl my-8">
+          <div class="flex gap-4 text-2xl mt-8 my-16">
             <ion-icon name="logo-facebook"></ion-icon>
             <ion-icon name="logo-instagram"></ion-icon>
             <ion-icon name="logo-twitter"></ion-icon>
@@ -145,21 +146,22 @@
           <h1>NEWSLETTER</h1>
           <p>To recieve tips on how to grow your community sign up to our weekly newsletter.We'll never send you spam or
             pass on your email address</p>
-          <div class="flex gap-4">
-            <input type="text" class="w-56 py-1 rounded">
-            <button class="px-4 py-1 bg-pink-500 rounded">Subscribe</button>
+          <div class="flex gap-4 relative">
+            <input type="email" id="email" class="w-56 py-1 rounded text-black outline-none px-2" onkeyup="validateEmail()">
+            <span id="error" class="text-sm absolute -bottom-6 text-red-600"></span>
+            <button class="px-4 py-1 bg-pink-500 rounded" id="submit" onclick="validateEmail()">Subscribe</button>
           </div>
         </div>
       </div>
     </div>
+    <div class="text-center left-80 absolute bottom-0 text-white max-[756px]:hidden">
+      <p class="attribution">
+        Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank" class="text-blue-600">Frontend Mentor</a>. 
+        Coded by <a href="https://github.com/vivekadapa" target="_blank" class="text-blue-600">Vivek Adapa</a>.
+      </p>
+    </div>
   </footer>
 
-  <!-- <footer>
-    <p class="attribution">
-      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-      Coded by <a href="#">Your Name Here</a>.
-    </p>
-  </footer> -->
 </body>
 
 </html>
